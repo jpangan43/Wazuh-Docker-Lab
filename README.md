@@ -31,3 +31,7 @@ It is designed as a **SOC Analyst portfolio project**, focusing on detection, an
 ## 🚀 Deployment
 ```bash
 docker compose up -d
+
+---
+
+
