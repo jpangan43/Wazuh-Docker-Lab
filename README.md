@@ -1,37 +1,45 @@
-# Wazuh SIEM Docker Lab (SOC Portfolio Project)
+# Wazuh SIEM Docker Lab (SOC Analyst Portfolio)
 
-This project demonstrates hands-on experience deploying and operating **Wazuh SIEM** using **Docker**.  
-It is designed as a **SOC Analyst portfolio project**, focusing on detection, analysis, and documentation.
+This project demonstrates hands-on experience deploying **Wazuh SIEM** using **Docker**.  
+It is designed as a **SOC Analyst portfolio project** focused on detection, alert analysis, and documentation.
 
 ---
 
-## 🔍 Project Objectives
+## 🎯 Objectives
 - Deploy a SIEM using Docker
-- Understand log ingestion and alerting
-- Practice SOC analyst workflows
-- Simulate attacks and analyze detections
+- Practice SOC monitoring workflows
+- Analyze security alerts
+- Document detection scenarios
 
 ---
 
-## 🏗 Lab Architecture
-- **Wazuh Manager** – Log collection and analysis
-- **Wazuh Indexer** – Stores alerts and events (OpenSearch)
-- **Wazuh Dashboard** – Alert visualization and analysis
+## 🏗 Architecture
+- **Wazuh Manager** – Collects and analyzes logs
+- **Wazuh Indexer** – Stores alerts (OpenSearch)
+- **Wazuh Dashboard** – Security monitoring UI
 
 ---
 
-## ⚙️ Tools Used
-- Wazuh 4.7.x
+## 🛠 Tools Used
+- Wazuh SIEM
 - Docker & Docker Compose
 - OpenSearch
-- Linux / Windows logs
 
 ---
 
-## 🚀 Deployment
-```bash
-docker compose up -d
+## 📂 Repository Structure
+wazuh-siem-docker-portfolio/
+├── docker-compose.yml
+├── docs/
+│ ├── architecture.md
+│ ├── installation.md
+│ └── detection-scenarios.md
+├── screenshots/
+└── README.md
+
 
 ---
 
-
+## 👤 Author
+**Jason**  
+SOC Analyst | Cybersecurity Enthusiast
