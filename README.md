@@ -34,6 +34,7 @@ wazuh-siem-docker-portfolio/
 │ ├── architecture.md
 │ ├── installation.md
 │ └── detection-scenarios.md
+│ └── mitre-mapping.md
 ├── screenshots/
 └── README.md
 
