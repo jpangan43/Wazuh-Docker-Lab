@@ -1,1 +1,20 @@
+## Scenario: Windows 11 RDP Brute Force
+
+**Victim:** Windows 11 (Host Machine)  
+**Attacker:** Kali Linux (VM)  
+**Log Source:** Windows Security Logs  
+**Event ID:** 4625  
+
+**MITRE ATT&CK:**
+- Tactic: Credential Access
+- Technique: Brute Force (T1110)
+
+**Detection Result:**
+- Multiple failed RDP logons detected
+- Alerts generated in Wazuh SIEM
+
+**SOC Response:**
+- Identify attacking IP
+- Recommend blocking source
+- Enforce account lockout policy
 
