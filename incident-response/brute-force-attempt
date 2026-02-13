@@ -1,44 +1,85 @@
-Incident Report: Brute Force Attempt
+Security Incident Report
+1. Incident Information
 
-Incident Summary
-Date: February 12, 2026
-Detected by: Wazuh SIEM
-Severity: Medium
-Status: Closed
-Wazuh detected multiple failed login attempts on a Windows 11 machine. The activity indicates a brute force attack attempting to access the system.
+Incident ID: INC-2026-001
+Incident Title: Suspected RDP Brute Force Attack
+Date Detected: February 12, 2026
+Time Detected: 22:15 UTC
+Detection Source: Wazuh SIEM
+Severity Level: High
+Incident Status: Closed
 
-Affected System
-Hostname: Windows 11 Lab
-IP Address: 192.168.10.139
+2. Executive Summary
+On February 12, 2026, Wazuh SIEM detected multiple failed Remote Desktop Protocol (RDP) login attempts on a Windows 11 endpoint. The login failures originated from IP address 192.168.1.50 and targeted the user account "testuser".
+The activity is consistent with a brute force attack. The investigation confirmed that no successful login occurred and no system compromise was detected.
+
+3. Affected Asset Information
+Hostname: WIN11-LAB
+IP Address: 192.168.1.100
 Operating System: Windows 11
-Monitored by: Wazuh Agent
+Wazuh Agent: Installed and active
+Targeted Account: testuser
 
-Attack Details
-Source IP: 192.168.1.81
-Attack Type: Brute Force
-Target User: socuser
-Multiple failed login attempts were detected from the attacker machine.
-
-Detection Evidence
+4. Detection Details
+SIEM Solution: Wazuh
 Log Source: Windows Security Event Log
-Event ID: 4625 – Failed login
 
-Wazuh Alert Rule:
+Relevant Event ID:
+Event ID: 4625
+Description: Failed login attempt
+Logon Type: 3
+
+Wazuh Rule Triggered:
 Rule ID: 60122
-Description: Windows Logon Failure
-Wazuh generated alerts after detecting repeated failed login attempts.
+Rule Description: Windows Logon Failure
+Alert Level: 8
+Multiple alerts were generated within a short time period, indicating suspicious login activity.
 
-Investigation Findings
-- Multiple failed login attempts were confirmed
-- Source IP address was identified
-- No successful login was detected
-- No system compromise occurred
+5. Attack Information
+Source IP Address: 192.168.1.50
+Source System: Kali Linux (Lab attacker machine)
+Attack Method: Brute Force
+Target Protocol: RDP (Port 3389)
 
-Response Actions
-- Investigated alerts in Wazuh dashboard
-- Reviewed Windows Event Logs
-- Verified system was not compromised
-- Continued monitoring system
+Attack Behavior Observed:
+- Multiple failed login attempts
+- Repeated authentication failures
+- No successful login detected
 
-Conclusion
-The brute force attack was successfully detected by Wazuh. The attacker did not gain access to the system. The system remains secure.
+6. Investigation and Analysis
+The SOC analyst reviewed alerts in the Wazuh dashboard and confirmed repeated failed login attempts from the same source IP address.
+Windows Event Viewer logs confirmed Event ID 4625 entries.
+
+No evidence of:
+- Successful login (Event ID 4624)
+- Privilege escalation
+- Malware execution
+- Persistence mechanisms
+This confirms the attack was unsuccessful.
+
+7. Response Actions Taken
+The following actions were performed:
+- Investigated alerts in Wazuh SIEM
+- Identified source IP address
+- Reviewed Windows security logs
+- Confirmed no successful login occurred
+- Continued monitoring of affected system
+
+8. Impact Assessment
+Confidentiality: No impact
+Integrity: No impact
+Availability: No impact
+The system remained secure and operational.
+
+9. Conclusio
+Wazuh SIEM successfully detected and alerted on a brute force attack targeting a Windows 11 endpoint via RDP. The investigation confirmed that the attacker was unable to gain access.
+No further action is required. The incident is considered resolved.
+
+10. Analyst Information
+Analyst Name: Jason Pangan
+Role: SOC Analyst (Lab Simulation)
+Tools Used:
+Wazuh SIEM
+Windows Event Viewer
+Kali Linux
+Ncrack
