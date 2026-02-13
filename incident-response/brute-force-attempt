@@ -1,0 +1,44 @@
+Incident Report: Brute Force Attempt
+
+Incident Summary
+Date: February 12, 2026
+Detected by: Wazuh SIEM
+Severity: Medium
+Status: Closed
+Wazuh detected multiple failed login attempts on a Windows 11 machine. The activity indicates a brute force attack attempting to access the system.
+
+Affected System
+Hostname: Windows 11 Lab
+IP Address: 192.168.10.139
+Operating System: Windows 11
+Monitored by: Wazuh Agent
+
+Attack Details
+Source IP: 192.168.1.81
+Attack Type: Brute Force
+Target User: socuser
+Multiple failed login attempts were detected from the attacker machine.
+
+Detection Evidence
+Log Source: Windows Security Event Log
+Event ID: 4625 – Failed login
+
+Wazuh Alert Rule:
+Rule ID: 60122
+Description: Windows Logon Failure
+Wazuh generated alerts after detecting repeated failed login attempts.
+
+Investigation Findings
+- Multiple failed login attempts were confirmed
+- Source IP address was identified
+- No successful login was detected
+- No system compromise occurred
+
+Response Actions
+- Investigated alerts in Wazuh dashboard
+- Reviewed Windows Event Logs
+- Verified system was not compromised
+- Continued monitoring system
+
+Conclusion
+The brute force attack was successfully detected by Wazuh. The attacker did not gain access to the system. The system remains secure.
